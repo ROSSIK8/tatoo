@@ -1,4 +1,5 @@
 @import "nullstyle.scss";
+@import "adaptive.scss";
 @font-face {
     font-family: 'MorfinSans';
     src: url('../fonts/MorfinSans-Regular.woff2') format('woff2'),
@@ -37,14 +38,6 @@ body {
 .logo {
     display: flex;
     align-items: center;
-}
-
-.logo__img {
-    width: 60px;
-    height: 60px;
-}
-.logo__text {
-    font-size: 60px;
 }
 
 .slider {
@@ -95,6 +88,15 @@ body {
 
 .page-header__img {
     margin: 0 10px 0 0;
+    width: 60px;
+    height: 60px;
+    
+    font-size: 60px;
+}
+
+.page-header__logo-text {
+    margin: 5px 0 0 0;
+    font-size: 60px;
 }
 
 .page-header__nav {
@@ -216,8 +218,8 @@ body {
 }
 
 .my-works__item {
-    width: 700px;
-    height: 500px;
+    max-width: 700px;
+    max-height: 500px;
     border-radius: 20px;
 
     box-shadow: 0 0 10px;
@@ -287,7 +289,84 @@ body {
 }
 
 
+// -------------- CONTACTS  -------------- 
+
+.contacts {
+    color: #000;
+    background: url('../img/bg4.jpg');
+    background-size: cover;
+    background-position-y: -50px;
+
+}
+
+.contacts__heading {
+
+}
+
+.contacts__subtitle {
+    font-size: 36px;
+    margin: 0 0 40px 0;
+}
+
+.contacts__messengers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 40px 0;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #606060;
+    
+    background-color: #222222;
+}
+
+.phone {
+    color: #d2d2d2;
+    font-size: 36px;
+}
+
+.messengers {
+    display: flex;
+    justify-content: space-between;
+
+    width: 25%;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #606060;
+
+    background-color: #1a1a1a;
+}
+
+.messenger__link {
+
+}
+
+.messenger__img {
+    width: 70px;
+    height: 70px;
+}
+
+
 // -------------- PAGE-FOOTER  -------------- 
 
 .page-footer {
+    padding: 15px 0;
+    background-color: #1a1a1a;
+}
+
+.page-footer__logo {
+    justify-content: center;
+}
+
+.page-footer__img {
+    width: 20px;
+    height: 20px;  
+    margin: 0 5px 0 0;  
+}
+
+.page-footer-logo-text {
+    margin: 2px 0 0 0;
+    font-size: 20px;
+
+    color: #fff;
 }
