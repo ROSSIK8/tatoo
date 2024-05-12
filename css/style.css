@@ -243,7 +243,7 @@ body {
 }
 
 .my-works {
-  background: url("/img/bg9.jpg") no-repeat;
+  background: url("../img/bg9.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -272,7 +272,7 @@ body {
 .price {
   color: #d2d2d2;
   font-size: 24px;
-  background: url("/img/bg3.jpg") no-repeat;
+  background: url("../img/bg3.jpg") no-repeat;
   background-size: cover;
 }
 
