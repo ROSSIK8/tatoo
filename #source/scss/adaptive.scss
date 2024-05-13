@@ -7,12 +7,8 @@
     .about-us__text {
       margin: 0 auto;
       text-align: center;
-      width: 60%;
+      width: 75%;
     }  
-
-    .address__info {
-        width: 60%;
-    }
 }
 
 @media (max-width: 900px) {
@@ -27,6 +23,11 @@
     .page-header__nav {
       display: none;
     }
+
+    .price__item {
+        // font-size: 28px;
+    }
+
 }
 
 @media (max-width: 720px) {
@@ -37,6 +38,42 @@
 
     .messengers {    
         width: 315px;
+        max-width: 100%;
     }
     
+}
+
+@media (max-width: 600px) {
+    .price__list {
+        width: 80%;
+    }   
+}
+
+@media (max-width: 470px) {
+    .about-us__text {
+      width: 100%;
+    }
+
+    // .price__item {
+    //     font-size: 20px;
+    // }
+    .price__bg {
+        width: 100%;
+    }   
+
+    .price__list {
+        width: 90%;
+    }   
+}
+
+@media (max-width: 390px) {
+    .phone {
+        font-size: 28px;
+    } 
+}
+
+@media (max-width: 360px) {
+    .price__item {
+        font-size: 20px;
+    } 
 }
