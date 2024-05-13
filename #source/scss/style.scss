@@ -1,5 +1,4 @@
 @import "nullstyle.scss";
-@import "adaptive.scss";
 @font-face {
     font-family: 'MorfinSans';
     src: url('../fonts/MorfinSans-Regular.woff2') format('woff2'),
@@ -22,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
 }
 
 .container {
@@ -75,7 +75,7 @@ body {
     z-index: 1000;
 
     width: 100%;
-    padding: 10px 0;
+    padding: 5px 0;
 
     box-shadow: 0 0 2px #000000;  
     background-color: #000000;  
@@ -88,15 +88,14 @@ body {
 
 .page-header__img {
     margin: 0 10px 0 0;
-    width: 60px;
-    height: 60px;
-    
-    font-size: 60px;
+    width: 50px;
+    height: 50px;
 }
 
 .page-header__logo-text {
     margin: 5px 0 0 0;
-    font-size: 60px;
+    
+    font-size: 50px;
 }
 
 .page-header__nav {
@@ -134,18 +133,30 @@ body {
     }
 }
 
-.page-main__section {
-    padding: 60px 0;
+.burger {
+    display: none;
+    background-color: transparent;
+}
+
+.burger__img {
+    width: 40px;
+    height: 40px;
 }
 
 
 // -------------- PAGE-MAIN  -------------- 
 
 .page-main {
+    width: 100%;
     flex: 1 1 auto;
 
-    margin: 80px 0 0 0;
+    margin: 65px 0 0 0;
 }
+
+.page-main__section {
+    padding: 60px 0;
+}
+
 
 
 // -------------- ABOUT-US  -------------- 
@@ -155,12 +166,12 @@ body {
     color: #d2d2d2;
     background: url('../img/bg1.jpg') no-repeat;
     background-size: cover;
-    background-position-y: -50px;
 }
+
+    
 
 .about-us__desc {
     display: flex;
-
 }
 
 .about-us__text {
@@ -214,11 +225,11 @@ body {
 }
 
 .my-works__slider {
-    gap: 100px;
+    justify-content: space-evenly;
 }
 
 .my-works__item {
-    max-width: 700px;
+    width: 60%;
     max-height: 500px;
     border-radius: 20px;
 
@@ -350,6 +361,7 @@ body {
 // -------------- PAGE-FOOTER  -------------- 
 
 .page-footer {
+    width: 100%;
     padding: 15px 0;
     background-color: #1a1a1a;
 }
@@ -370,3 +382,5 @@ body {
 
     color: #fff;
 }
+
+@import "adaptive.scss";
