@@ -247,7 +247,7 @@ body {
 }
 
 .address__img {
-  width: 400px;
+  width: 100%;
   border-radius: 20px;
 }
 
@@ -265,7 +265,7 @@ body {
 }
 
 .my-works__item {
-  width: 60%;
+  width: 75%;
   max-height: 500px;
   border-radius: 20px;
   box-shadow: 0 0 10px;
@@ -390,7 +390,10 @@ body {
   .about-us__text {
     margin: 0 auto;
     text-align: center;
-    max-width: 520px;
+    width: 60%;
+  }
+  .address__info {
+    width: 60%;
   }
 }
 @media (max-width: 900px) {

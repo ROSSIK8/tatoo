@@ -6,7 +6,10 @@
   .about-us__text {
     margin: 0 auto;
     text-align: center;
-    max-width: 520px;
+    width: 60%;
+  }
+  .address__info {
+    width: 60%;
   }
 }
 @media (max-width: 900px) {
