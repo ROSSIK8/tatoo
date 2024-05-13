@@ -85,6 +85,7 @@ body {
 .wraper {
   display: flex;
   flex-direction: column;
+  min-width: 320px;
   height: 100%;
   position: relative;
 }
@@ -202,11 +203,11 @@ body {
 }
 
 .page-main__section {
-  padding: 30px 0;
+  padding: 60px 0;
 }
 
 .about-us {
-  padding-top: 0;
+  padding-top: 30px;
   font-size: 24px;
   color: #d2d2d2;
   background: url("../img/bg1.jpg") no-repeat;
@@ -259,6 +260,7 @@ body {
 }
 
 .my-works__heading {
+  display: inline-block;
   color: #000000;
 }
 
@@ -283,6 +285,7 @@ body {
 .price {
   color: #d2d2d2;
   background: url("../img/bg3.jpg") no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -320,24 +323,36 @@ body {
   background-color: #d2d2d2;
 }
 
-.contacts {
+.record {
   color: #000;
   background: url("../img/bg4.jpg");
   background-size: cover;
   background-position-y: -50px;
 }
 
-.contacts__subtitle {
+.record__heading {
   display: inline-block;
-  font-size: 36px;
-  margin: 0 0 40px 0;
+  padding: 20px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.contacts__messengers {
+.record__subtitle {
+  display: inline-block;
+  margin: 0 0 40px 0;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 36px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.record__messengers {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 835px;
+  max-width: 855px;
   padding: 40px 20px;
   margin: 0 auto;
   border-radius: 20px;
@@ -410,8 +425,13 @@ body {
     display: none;
   }
 }
+@media (max-width: 850px) {
+  .my-works {
+    background-position-x: -150px;
+  }
+}
 @media (max-width: 720px) {
-  .contacts__messengers {
+  .record__messengers {
     flex-direction: column;
     gap: 30px;
   }
@@ -421,6 +441,17 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .my-works {
+    background-position-x: -300px;
+    background-position-y: -30px;
+    background-repeat: repeat;
+  }
+  .my-works__heading {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 0 5px #606060;
+  }
   .price__list {
     width: 80%;
   }
@@ -439,6 +470,9 @@ body {
   .price__list {
     width: 90%;
   }
+  .record {
+    background-position-x: -150px;
+  }
 }
 @media (max-width: 390px) {
   .phone {
@@ -446,6 +480,14 @@ body {
   }
 }
 @media (max-width: 360px) {
+  .price__item {
+    font-size: 20px;
+  }
+}
+@media (max-width: 346px) {
+  .my-works__heading {
+    padding: 10px;
+  }
   .price__item {
     font-size: 20px;
   }

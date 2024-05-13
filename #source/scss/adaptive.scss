@@ -30,8 +30,14 @@
 
 }
 
+@media (max-width: 850px) {
+    .my-works {
+        background-position-x: -150px;
+    }     
+}
+
 @media (max-width: 720px) {
-    .contacts__messengers {
+    .record__messengers {
         flex-direction: column;
         gap: 30px;
     }
@@ -44,6 +50,19 @@
 }
 
 @media (max-width: 600px) {
+    .my-works {
+        background-position-x: -300px;
+        background-position-y: -30px;
+        background-repeat: repeat;
+    }
+    
+    .my-works__heading {
+        padding: 20px;
+        background-color: rgba($color: #fff, $alpha: 0.6);
+        border-radius: 20px;
+        box-shadow: 0 0 5px #606060;
+    }
+    
     .price__list {
         width: 80%;
     }
@@ -58,16 +77,17 @@
     .about-us__text {
       width: 100%;
     }
-
-    // .price__item {
-    //     font-size: 20px;
-    // }
     .price__bg {
         width: 100%;
     }   
 
     .price__list {
         width: 90%;
+    }
+    
+    .record {
+        background-position-x: -150px;
+    
     }   
 }
 
@@ -78,6 +98,16 @@
 }
 
 @media (max-width: 360px) {
+    .price__item {
+        font-size: 20px;
+    } 
+}
+
+@media (max-width: 346px) { 
+    .my-works__heading {
+        padding: 10px;
+    }
+
     .price__item {
         font-size: 20px;
     } 
