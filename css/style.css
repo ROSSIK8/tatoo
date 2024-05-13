@@ -348,7 +348,7 @@ body {
 .messengers {
   display: flex;
   justify-content: space-between;
-  width: 25%;
+  width: 285px;
   padding: 10px 40px;
   border-radius: 20px;
   box-shadow: 0 0 5px #606060;
@@ -394,10 +394,22 @@ body {
   }
 }
 @media (max-width: 900px) {
+  .arrow-btn {
+    display: none;
+  }
   .burger {
     display: block;
   }
   .page-header__nav {
     display: none;
+  }
+}
+@media (max-width: 720px) {
+  .contacts__messengers {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .messengers {
+    width: 315px;
   }
 }

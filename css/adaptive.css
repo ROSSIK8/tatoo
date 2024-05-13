@@ -10,10 +10,22 @@
   }
 }
 @media (max-width: 900px) {
+  .arrow-btn {
+    display: none;
+  }
   .burger {
     display: block;
   }
   .page-header__nav {
     display: none;
+  }
+}
+@media (max-width: 720px) {
+  .contacts__messengers {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .messengers {
+    width: 315px;
   }
 }
