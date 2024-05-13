@@ -46,7 +46,12 @@
 @media (max-width: 600px) {
     .price__list {
         width: 80%;
-    }   
+    }
+
+    .my-works__item {
+        width: 400px;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 470px) {
