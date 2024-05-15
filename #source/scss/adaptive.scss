@@ -13,6 +13,12 @@
     }  
 }
 
+@media (max-width: 1024px) {
+    .about-us {
+        background-position-x: -200px;
+    }    
+}
+
 @media (max-width: 900px) {
     .arrow-btn {
         display: none;
@@ -84,6 +90,9 @@
 }
 
 @media (max-width: 470px) {
+    .about-us {
+        background-position-x: -400px;
+    }    
     .about-us__text-block {
         width: 100%;
     }

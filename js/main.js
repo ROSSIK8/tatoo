@@ -2,11 +2,13 @@
 
 
 const aboutUsText = document.querySelector('.about-us__text');
-const openCloseText =  document.querySelector('.about-us__open-text');
+const aboutUsOpenText =  document.querySelector('.about-us__open-text');
 
-openCloseText.addEventListener('click', () => {
+aboutUsOpenText.addEventListener('click', openCloseText)
+
+function openCloseText() {
     aboutUsText.classList.toggle('about-us__full-text')
-    for (let child of openCloseText.children) {
+    for (let child of aboutUsOpenText.children) {
         child.classList.toggle('hide')
     }
-})
+}

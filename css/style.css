@@ -433,6 +433,11 @@ body {
     width: 75%;
   }
 }
+@media (max-width: 1024px) {
+  .about-us {
+    background-position-x: -200px;
+  }
+}
 @media (max-width: 900px) {
   .arrow-btn {
     display: none;
@@ -488,6 +493,9 @@ body {
   }
 }
 @media (max-width: 470px) {
+  .about-us {
+    background-position-x: -400px;
+  }
   .about-us__text-block {
     width: 100%;
   }
