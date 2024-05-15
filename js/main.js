@@ -9,14 +9,19 @@ function hideShowNav() {
     navigation.classList.toggle('active');
 }
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', hideNav);
+document.addEventListener('scroll', () => {
+    navigation.classList.remove('active');
+}
+);
+function hideNav(e) {
     const target = e.target.closest('.burger');
     if (!target) {
         navigation.classList.remove('active');
     } else {
         return
     }
-});
+}
 
 
 
