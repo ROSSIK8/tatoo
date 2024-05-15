@@ -29,7 +29,11 @@
     }
 
     .page-header__nav {
-      display: none;
+        display: none;
+    }
+
+    .page-header__link:hover::before {
+        transform: scale(1);
     }
 
 
