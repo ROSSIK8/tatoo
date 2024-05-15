@@ -5,8 +5,10 @@
     }
 
     .about-us__text {
-      margin: 0 auto;
       text-align: center;
+    }  
+    .about-us__text-block {
+      margin: 0 auto;
       width: 75%;
     }  
 }
@@ -24,19 +26,27 @@
       display: none;
     }
 
-    .price__item {
-        // font-size: 28px;
-    }
 
 }
 
 @media (max-width: 850px) {
+    .about-us__text {
+        height: 150px;
+        overflow: hidden;
+    }
+    
+    .about-us__open-text {
+        display: block;
+        background: transparent;
+    }
+
     .my-works {
         background-position-x: -150px;
     }     
 }
 
 @media (max-width: 720px) {
+
     .record__messengers {
         flex-direction: column;
         gap: 30px;
@@ -74,8 +84,13 @@
 }
 
 @media (max-width: 470px) {
+    .about-us__text-block {
+        width: 100%;
+    }
+
     .about-us__text {
-      width: 100%;
+        line-height: 24px;
+        width: 100%;
     }
     .price__bg {
         width: 100%;

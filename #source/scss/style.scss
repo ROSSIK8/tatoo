@@ -178,9 +178,34 @@ body {
     display: flex;
 }
 
+.about-us__text-block {
+    margin: 0 20px 0 0;
+}
+
 .about-us__text {
     text-align: left;
-    margin: 0 20px 0 0;
+    line-height: 30px;
+}
+
+.about-us__full-text {
+    height: 100%!important;
+}
+
+.about-us__open-text {
+    display: none;
+    width: 100%;
+}
+
+.about-us__arrow {
+    width: 30px;
+
+}
+
+.about-us__arrow-up {
+    // display: none;
+}
+
+.about-us__arrow-down {
 }
 
 .address__btn {
