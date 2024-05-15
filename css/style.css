@@ -130,6 +130,10 @@ body {
   display: none !important;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .page-header {
   color: #fff;
   position: fixed;
