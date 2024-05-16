@@ -21,10 +21,22 @@
     display: block;
   }
   .page-header__nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    bottom: -200px;
+    right: 15px;
+    background-color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 2px #d2d2d2;
+    padding: 10px;
+    width: auto;
+    gap: 10px;
+    transform: scale(0);
   }
-  .page-header__link:hover::before {
-    transform: scale(1);
+  .page-header__link::before {
+    display: none;
   }
 }
 @media (max-width: 850px) {
