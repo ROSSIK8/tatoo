@@ -63,14 +63,14 @@ const aboutUsOpenText =  document.querySelector('.about-us__open-text');
 aboutUsOpenText.addEventListener('click', openCloseText)
 function openCloseText(e) {
     let textHeight = aboutUsText.scrollHeight;
-    console.log(textHeight);
-    if (e.target.closest('.about-us__arrow-down')) {    
-        aboutUsText.style.maxHeight = textHeight + 'px';
-    }
-    if (e.target.closest('.about-us__arrow-up')) {    
+    if (e.target.closest('.about-us__open-text.close')) {    
+        this.classList.remove('close'); 
         aboutUsText.style.maxHeight = '150px';
     }
-
+    else if (e.target.closest('.about-us__open-text')) {
+        this.classList.add('close');
+        aboutUsText.style.maxHeight = textHeight + 'px';
+    } 
     for (let child of aboutUsOpenText.children) {
         child.classList.toggle('hide')
     }
