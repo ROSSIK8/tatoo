@@ -51,17 +51,27 @@ body {
 .arrow {
     display: grid;
     align-items: center;
+    position: absolute;
+
+    top: 0;
+    &--left {
+        left: 0;
+    }
+    &--right {
+        right: 0;
+    }
+    
 }
 
 .arrow-btn {
-    border-radius: 100%;
+    height: 100%;
+    background-color: rgba($color: #d2d2d2, $alpha: 0.3);
+    // border-radius: 100%;
 }
 
 .arrow-img {
     display: block;
-
     width: 50px;
-    height: 50px;
 
 
 }
@@ -221,17 +231,6 @@ body {
 
 }
 
-.about-us__arrow-up {
-    // display: none;
-}
-
-.about-us__arrow-down {
-}
-
-.address__btn {
-    background-color: rgba(255, 255, 255, 50%);
-}
-
 .address {
     display: flex;
     flex-direction: column;
@@ -240,25 +239,42 @@ body {
 
 .address__slider {
     justify-content: center;
-    gap: 10px;
-}
-
-.address__info {
-    display: flex;
     flex-direction: column;
-    padding: 0 0 10px 0;
-    width: 400px;
-    max-width: 100%;
-    gap: 10px;
 
     background-color: rgba(0, 0, 0, 75%);
+
+    width: 400px;
+    max-width: 100%;
+
+    padding: 0 0 10px 0;
+    margin: 0 auto;
+
     border-radius: 20px;
-    box-shadow: 0 0 10px #131313;
+    gap: 10px;
+    overflow: hidden;
 }
+
+.address__imgs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 100%;
+    gap: 10px;
+
+    box-shadow: 0 0 10px #131313;
+    overflow: hidden;
+}
+
 
 .address__img {
     border-radius: 20px;
 }
+
+.address__arrow .arrow-img{
+    width: 30px;
+}
+
 .address__text {
 }
 
@@ -277,12 +293,24 @@ body {
 
 .my-works__slider {
     justify-content: space-evenly;
+
+    margin: 0 auto;
+    max-width: 855px;
+    width: 100%;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.my-works__imgs {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .my-works__item {
-    width: 75%;
+    width: 100%;
     max-height: 500px;
-    border-radius: 20px;
 
     box-shadow: 0 0 10px;
 
@@ -290,8 +318,6 @@ body {
 }
 
 .my-works__btn {
-    background-color: rgba($color: #ffffff, $alpha: 0.5);
-    box-shadow: 0 0 5px #000;
 }
 
 

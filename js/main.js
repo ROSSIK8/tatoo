@@ -26,6 +26,17 @@ function hideNav(e) {
 
 
 // -------------- ABOUT-US  -------------- 
+function updateArrowHeight() {
+    const arrows = document.querySelectorAll('.arrow');
+    Array.from(arrows).forEach((item) => {
+        let itemParent = item.parentElement;
+        item.style.height = `${itemParent.offsetHeight}px`
+        }
+    )
+}
+
+window.onload = updateArrowHeight;
+window.onresize = updateArrowHeight;
 
 const aboutUsText = document.querySelector('.about-us__text');
 const aboutUsOpenText =  document.querySelector('.about-us__open-text');

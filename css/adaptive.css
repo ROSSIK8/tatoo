@@ -17,9 +17,6 @@
   }
 }
 @media (max-width: 900px) {
-  .arrow-btn {
-    display: none;
-  }
   .burger {
     display: block;
   }
@@ -68,7 +65,7 @@
   .price__list {
     width: 80%;
   }
-  .my-works__item {
+  .my-works__slider {
     width: 400px;
     max-width: 100%;
   }
