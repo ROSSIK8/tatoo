@@ -285,6 +285,12 @@ body {
   gap: 10px;
   overflow: hidden;
 }
+.address__slider .address__arrow:first-child .address__btn {
+  border-radius: 0 0 0 20px;
+}
+.address__slider .address__arrow:last-child .address__btn {
+  border-radius: 0 0 20px 0;
+}
 
 .address__imgs {
   display: flex;
