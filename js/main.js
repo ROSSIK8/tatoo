@@ -1,4 +1,29 @@
 "use strict"
+// -------------- ОБЩИЕ НАСТРОЙКИ  -------------- 
+
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//       e.preventDefault();
+//       document.querySelector(this.getAttribute('href'))
+//       .scrollIntoView({ behavior: 'smooth' });
+//       console.log(document.querySelector(this.getAttribute('href')));
+//     });
+//   });
+
+const anchors = document.querySelectorAll('a[href^="#"')
+anchors.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const element = document.querySelector(item.getAttribute('href'));
+        window.scrollBy({
+            top: element.getBoundingClientRect().top - 60,
+            behavior: 'smooth',
+        })
+
+    })
+})
+  
+
 // -------------- PAGE-HEADER  -------------- 
 
 const navigation = document.querySelector('.page-header__nav');
