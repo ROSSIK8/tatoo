@@ -246,10 +246,7 @@ body {
 .about-us__text {
   text-align: left;
   line-height: 30px;
-}
-
-.about-us__full-text {
-  height: 100% !important;
+  transition: max-height 0.2s ease;
 }
 
 .about-us__open-text {
@@ -501,7 +498,7 @@ body {
 }
 @media (max-width: 850px) {
   .about-us__text {
-    height: 150px;
+    max-height: 150px;
     overflow: hidden;
   }
   .about-us__open-text {

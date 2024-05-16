@@ -41,7 +41,7 @@
 }
 @media (max-width: 850px) {
   .about-us__text {
-    height: 150px;
+    max-height: 150px;
     overflow: hidden;
   }
   .about-us__open-text {

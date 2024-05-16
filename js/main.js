@@ -1,15 +1,6 @@
 "use strict"
 // -------------- ОБЩИЕ НАСТРОЙКИ  -------------- 
 
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       document.querySelector(this.getAttribute('href'))
-//       .scrollIntoView({ behavior: 'smooth' });
-//       console.log(document.querySelector(this.getAttribute('href')));
-//     });
-//   });
-
 const anchors = document.querySelectorAll('a[href^="#"')
 anchors.forEach(item => {
     item.addEventListener('click', (e) => {
@@ -26,6 +17,7 @@ anchors.forEach(item => {
 
 // -------------- PAGE-HEADER  -------------- 
 
+// функционал burger menu
 const navigation = document.querySelector('.page-header__nav');
 const burgerBtn = document.querySelector('.burger');
 
@@ -51,6 +43,7 @@ function hideNav(e) {
 
 
 // -------------- ABOUT-US  -------------- 
+// динамическое выевление высоты кнопки слайдеров
 function updateArrowHeight() {
     const arrows = document.querySelectorAll('.arrow');
     Array.from(arrows).forEach((item) => {
@@ -63,12 +56,21 @@ function updateArrowHeight() {
 window.onload = updateArrowHeight;
 window.onresize = updateArrowHeight;
 
+// функционал кнопки скрытия/открытия текста
 const aboutUsText = document.querySelector('.about-us__text');
 const aboutUsOpenText =  document.querySelector('.about-us__open-text');
 
 aboutUsOpenText.addEventListener('click', openCloseText)
-function openCloseText() {
-    aboutUsText.classList.toggle('about-us__full-text')
+function openCloseText(e) {
+    let textHeight = aboutUsText.scrollHeight;
+    console.log(textHeight);
+    if (e.target.closest('.about-us__arrow-down')) {    
+        aboutUsText.style.maxHeight = textHeight + 'px';
+    }
+    if (e.target.closest('.about-us__arrow-up')) {    
+        aboutUsText.style.maxHeight = '150px';
+    }
+
     for (let child of aboutUsOpenText.children) {
         child.classList.toggle('hide')
     }
