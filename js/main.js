@@ -78,78 +78,38 @@ function openCloseText(e) {
 
 // функционал слайдера
 
-let currentIndexAddress = 0;
-let currentIndexMyWorks = 0;
-const totalSlidesAdress = document.querySelectorAll('.address__img').length;
-const totalSlidesMyMorks = document.querySelectorAll('.my-works__item').length;
+// Инициализация всех слайдеров
+initSlider('.address__imgs', '.address__btn--right', '.address__btn--left', '.address__img');
+initSlider('.my-works__imgs', '.my-works__btn--right', '.my-works__btn--left', '.my-works__item');
 
-const nextSlideAddress = document.querySelector('.address__btn--right');
-const prevSlideAddress = document.querySelector('.address__btn--left');
-nextSlideAddress.addEventListener('click', nextSlideForAddress)
-prevSlideAddress.addEventListener('click', prevSlideForAddress)
+// Инициализация слайдера
+function initSlider(sliderContainerSelector, nextBtnSelector, prevBtnSelector, slideSelector) {
+    let currentIndex = 0;
+    const sliderContainer = document.querySelector(sliderContainerSelector);
+    const nextBtn = document.querySelector(nextBtnSelector);
+    const prevBtn = document.querySelector(prevBtnSelector);
+    const totalSlides = document.querySelectorAll(slideSelector).length;
+        
 
-const nextSlideMyWorks = document.querySelector('.my-works__btn--right');
-const prevSlideMyWorks = document.querySelector('.my-works__btn--left');
-nextSlideMyWorks.addEventListener('click', nextSlideForMyWorks)
-prevSlideMyWorks.addEventListener('click', prevSlideForMyWorks)
+    nextBtn.addEventListener('click', () => {
+        currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
+        updateSlider()        
+    })
 
-prevSlideAddress.style.display = 'none';
-prevSlideMyWorks.style.display = 'none';
+    prevBtn.addEventListener('click', () => {
+        currentIndex = Math.max(currentIndex - 1, 0);
+        updateSlider()        
+    })
 
-function showSlide(slides_, currentIndex, totalSlides, prevSlide, nextSlide) {
-    const slides = document.querySelector(slides_);
-    const offset = -currentIndex * 100;
-    slides.style.transform = `translateX(${offset}%)`;
+    prevBtn.style.display = 'none';  // Изначально прячем кнопку "предыдущий"
+    updateSlider();
 
-    if (currentIndex == 0) {
-        prevSlide.style.display = 'none';
-    } else {
-        prevSlide.style.display = 'block';
-    }
+    // Обновление слайдера
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        sliderContainer.style.transform = `translateX(${offset}%)`;
     
-    if (currentIndex == totalSlides - 1) {
-        nextSlide.style.display = 'none';
-    } else {
-        nextSlide.style.display = 'block';
+        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextBtn.style.display = currentIndex === totalSlides - 1 ? 'none' : 'block';
     }
 }
-
-// функции смены слайдов для address__slider
-
-function nextSlideForAddress() {
-    currentIndexAddress++
-    if (currentIndexAddress > totalSlidesAdress - 1) {
-        currentIndexAddress = totalSlidesAdress - 1;
-    }
-    showSlide('.address__imgs', currentIndexAddress, totalSlidesAdress, prevSlideAddress, nextSlideAddress);
-}
-
-function prevSlideForAddress() {
-    currentIndexAddress--
-    if (currentIndexAddress < 0) {
-        currentIndexAddress = 0;
-    }
-    showSlide('.address__imgs', currentIndexAddress, totalSlidesAdress, prevSlideAddress, nextSlideAddress);
-}
-
-// функции смены слайдов для my-works__slider
-
-function nextSlideForMyWorks() {
-    currentIndexMyWorks++
-    if (currentIndexMyWorks > totalSlidesMyMorks - 1) {
-        currentIndexMyWorks = totalSlidesMyMorks - 1;
-    }
-    showSlide('.my-works__imgs', currentIndexMyWorks, totalSlidesMyMorks, prevSlideMyWorks, nextSlideMyWorks);
-}
-
-function prevSlideForMyWorks() {
-    currentIndexMyWorks--
-    if (currentIndexMyWorks < 0) {
-        currentIndexMyWorks = 0;
-    }
-    showSlide('.my-works__imgs', currentIndexMyWorks, totalSlidesMyMorks, prevSlideMyWorks, nextSlideMyWorks);
-}
-console.log(currentIndexMyWorks)
-
-
-
