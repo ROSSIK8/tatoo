@@ -29,8 +29,8 @@ function hideShowNav() {
 document.addEventListener('click', hideNav);
 document.addEventListener('scroll', () => {
     navigation.classList.remove('active');
-}
-);
+});
+
 function hideNav(e) {
     const target = e.target.closest('.burger');
     if (!target) {
@@ -43,18 +43,6 @@ function hideNav(e) {
 
 
 // -------------- ABOUT-US  -------------- 
-// динамическое выявление высоты кнопки слайдеров
-function updateArrowHeight() {
-    const arrows = document.querySelectorAll('.arrow');
-    Array.from(arrows).forEach((item) => {
-        let itemParent = item.parentElement;
-        item.style.height = `${itemParent.offsetHeight}px`
-        }
-    )
-}
-
-window.onload = updateArrowHeight;
-window.onresize = updateArrowHeight;
 
 // функционал кнопки скрытия/открытия текста
 const aboutUsText = document.querySelector('.about-us__text');
@@ -77,6 +65,20 @@ function openCloseText(e) {
 }
 
 // функционал слайдера
+
+// динамическое выявление высоты кнопки слайдеров
+function updateArrowHeight() {
+    const arrows = document.querySelectorAll('.arrow');
+    Array.from(arrows).forEach((item) => {
+        let itemParent = item.parentElement;
+        item.style.height = `${itemParent.offsetHeight}px`
+        }
+    )
+}
+
+window.onload = updateArrowHeight;
+window.onresize = updateArrowHeight;
+
 
 // Инициализация всех слайдеров
 initSlider('.address__imgs', '.address__btn--right', '.address__btn--left', '.address__img');
