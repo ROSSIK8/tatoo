@@ -541,6 +541,9 @@ body {
   .about-us__text-block {
     width: 100%;
   }
+  .my-works {
+    background-position-x: -350px;
+  }
   .about-us__text {
     line-height: 24px;
     width: 100%;
