@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <link rel="stylesheet" href="static/css/style.css">
-    <title>Тату салон BULAD</title>
     <link rel="shortcut icon" href="static/img/logo-red.svg">
+    <title>Тату салон BULAD</title>
 </head>
 <body>
   <div class="wraper">
@@ -37,7 +38,7 @@
             <div class="about-us__desc">
                 <div class="about-us__text-block">
                     <p class="about-us__text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis enim inventore excepturi iure. Maxime ex labore vel neque at ut velit? Alias provident quae molestiae eius modi deserunt molestias at dignissimos asperiores repellendus? Nihil culpa magnam possimus ipsum. Esse hic facere aperiam deleniti officiis, debitis commodi est mollitia distinctio iure repellat perferendis culpa quam aliquam atque sapiente itaque voluptatibus? Distinctio a quos, possimus eaque praesentium officia. Accusantium veniam laudantium molestias nesciunt, eveniet labore dignissimos voluptates sint adipisci dolore nam ipsam consequuntur. Sunt, delectus inventore? Quisquam quod laudantium molestias odit. Mollitia dolore officiis iure, dolor incidunt quia laudantium optio consequatur quis!
+                        {{ text_about_us.text }}
                     </p>
                     <button type="button" class="about-us__open-text">
                         <img src="static/img/arrow-down-1.svg" alt="arrow-down" class="about-us__arrow-down about-us__arrow">
@@ -47,9 +48,12 @@
                 <div class="address">
                   <div class="address__bg">
                     <div class="address__slider slider"> 
-                      <div class="address__imgs"> 
-                          <img src="static/img/tatu.jpg" alt="tatu" class="address__img">
-                          <img src="static/img/room.jpg" alt="room" class="address__img">
+                      <div class="address__imgs">
+                          {% for image in images %}
+                            <img src="{{ image.img.url }}" alt="image.img" class="address__img">
+                          {% endfor %}
+<!--                          <img src="static/img/tatu.jpg" alt="tatu" class="address__img">-->
+<!--                          <img src="static/img/room.jpg" alt="room" class="address__img">-->
                       </div>              
                       <div class="address__arrow arrow arrow--left">
                           <button class="address__btn address__btn--left arrow-btn">
