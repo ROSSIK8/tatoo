@@ -49,11 +49,9 @@
                   <div class="address__bg">
                     <div class="address__slider slider"> 
                       <div class="address__imgs">
-                          {% for image in images %}
-                            <img src="{{ image.img.url }}" alt="image.img" class="address__img">
+                          {% for image in images_about_us %}
+                            <img src="{{ image.img.url }}" alt="{{  image.img }}" class="address__img">
                           {% endfor %}
-<!--                          <img src="static/img/tatu.jpg" alt="tatu" class="address__img">-->
-<!--                          <img src="static/img/room.jpg" alt="room" class="address__img">-->
                       </div>              
                       <div class="address__arrow arrow arrow--left">
                           <button class="address__btn address__btn--left arrow-btn">
@@ -79,11 +77,14 @@
           <h2 class="my-works__heading heading">Мои работы</h2>
           <div class="my-works__slider slider">
             <div class="my-works__imgs">
+              {% for image in images_my_works %}
+                <img src="{{ image.img.url }}" alt="{{  image.img }}" class="my-works__item">
+              {% endfor %}
 
-              <img src="static/img/tatu2.jpg" alt="tatu2" class="my-works__item">
-              <img src="static/img/tatu3.jpg" alt="tatu3" class="my-works__item">
-              <img src="static/img/tatu1.jpeg" alt="tatu1" class="my-works__item">
-              <img src="static/img/tatto.jpg" alt="tatu3" class="my-works__item">
+<!--              <img src="static/img/tatu2.jpg" alt="tatu2" class="my-works__item">-->
+<!--              <img src="static/img/tatu3.jpg" alt="tatu3" class="my-works__item">-->
+<!--              <img src="static/img/tatu1.jpeg" alt="tatu1" class="my-works__item">-->
+<!--              <img src="static/img/tatto.jpg" alt="tatu3" class="my-works__item">-->
 
             </div>
             <div class="arrow arrow--left">
