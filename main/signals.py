@@ -5,7 +5,8 @@ import os
 
 
 @receiver(post_delete, sender=ImageAboutUs)
-def delete_img_about_us(sender, instance, **kwargs):
+@receiver(post_delete, sender=ImageMyWorks)
+def delete_img(sender, instance, **kwargs):
     if instance.img:
         img_path = instance.img.path
         if os.path.isfile(img_path):

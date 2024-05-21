@@ -25,9 +25,17 @@ class ImageAboutUs(models.Model):
 
 class ImageMyWorks(models.Model):
     img = models.ImageField(upload_to='my_works/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+
+    created_at.verbose_name = 'Время создания'
+    update_at.verbose_name = 'Время обновления'
+
+
 
     class Meta:
-        ordering = ['-img']
+        ordering = ['-update_at']
         verbose_name = 'Мои работы'
         verbose_name_plural = 'Мои работы'
 
