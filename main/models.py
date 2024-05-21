@@ -23,6 +23,17 @@ class ImageAboutUs(models.Model):
         return f'{self.img}'
 
 
+class BackgroundAboutUs(models.Model):
+    background = models.ImageField(upload_to='about_us/background/')
+
+    class Meta:
+        verbose_name = 'Фон "О нас"'
+        verbose_name_plural = 'Фон "О нас"'
+
+    def __str__(self):
+        return f'{self.background}'
+
+
 class ImageMyWorks(models.Model):
     img = models.ImageField(upload_to='my_works/')
     created_at = models.DateTimeField(auto_now_add=True)

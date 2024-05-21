@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import TextAboutUs, ImageAboutUs, ImageMyWorks
+from .models import TextAboutUs, ImageAboutUs, ImageMyWorks, BackgroundAboutUs
 
 
 admin.site.register(TextAboutUs)
@@ -16,6 +16,16 @@ class ImageMyWorksAdmin(admin.ModelAdmin):
         return format_html('<img src="{}" width="100" height="100" />', obj.img.url)
     display_image.short_description = 'Картинка'
     display_image.allow_tags = True
+
+
+@admin.register(BackgroundAboutUs)
+class BackgroundAboutUsAdmin(admin.ModelAdmin):
+    list_display = ['display_background']
+
+    def display_background(self, obj):
+        return format_html('<img src={} width="100" height="100" />', obj.background.url)
+    display_background.short_description = 'Фон'
+    display_background.allow_tags = True
 
 
 # Register your models here.

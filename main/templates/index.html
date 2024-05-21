@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .about-us {
+          background: url("{{ background_about_us.background.url }}") no-repeat;
+          padding-top: 30px;
+          font-size: 24px;
+          color: #d2d2d2;
+          background-size: cover;
+        }
+    </style>
     <link rel="shortcut icon" href="static/img/logo-red.svg">
     <title>Тату салон BULAD</title>
 </head>
