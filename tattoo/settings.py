@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'admin_reorder',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'tattoo.urls'
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'tattoo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tattoo_site',
+        'NAME': 'tattoo_site1',
         'USER': 'postgres',
         'PASSWORD': 'april082004',
         'HOST': 'localhost',
@@ -119,6 +121,45 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+ADMIN_REORDER = [
+    {
+        'app': 'main',
+        'label': 'О нас',
+        'models': (
+            'main.TextAboutUs', 'main.ImageAboutUs', 'main.BackgroundAboutUs',
+        )
+    },
+    {
+        'app': 'main',
+        'label': 'Мои работы',
+        'models': (
+            'main.ImageMyWorks', 'main.BackgroundMyWorks',
+        )
+    },
+    {
+        'app': 'main',
+        'label': 'Цены',
+        'models': (
+            'main.Service', 'main.BackgroundService',
+        )
+    },
+    {
+        'app': 'main',
+        'label': 'Запись на приём',
+        'models': (
+            'main.BackgroundRecord',
+        )
+    },
+    {
+        'app': 'main',
+        'label': 'Отзывы',
+        'models': (
+            'main.BackgroundReviews',
+        )
+    }
+]
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

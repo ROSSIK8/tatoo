@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
         .about-us {
           background: url("{{ background_about_us.background.url }}") no-repeat;
@@ -13,8 +12,26 @@
           color: #d2d2d2;
           background-size: cover;
         }
+        .my-works {
+          background: url('{{ background_my_works.background.url }}') no-repeat;
+          background-size: cover;
+        }
+        .price {
+            color: #d2d2d2;
+            background: url('{{ background_price.background.url }}') no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .record {
+            color: #000;
+            background: url('{{ background_record.background.url }}');
+            background-size: cover;
+            background-position-y: -50px;
+
+        }
     </style>
-    <link rel="shortcut icon" href="static/img/logo-red.svg">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo-red.svg' %}">
     <title>Тату салон BULAD</title>
 </head>
 <body>
@@ -23,7 +40,7 @@
       <div class="container">
         <div class="page-header__row">
           <div class="logo">
-            <img src="static/img/logo.svg" alt="logo" class="page-header__img logo__img">
+            <img src="{% static 'img/logo.svg' %}" alt="logo" class="page-header__img logo__img">
             <h1 class="page-header__logo-text logo__text">BULAD</h1>
           </div>
           <nav class="page-header__nav">
@@ -34,7 +51,7 @@
             <a href="#review" class="page-header__link">Отзывы</a>
           </nav>
           <button type="button" class="burger">
-            <img src="static/img/burger-menu.svg" alt="burger-menu" class="burger__img">
+            <img src="{% static 'img/burger-menu.svg' %}" alt="burger-menu" class="burger__img">
           </button>
         </div>
       </div>
@@ -50,8 +67,8 @@
                         {{ text_about_us.text }}
                     </p>
                     <button type="button" class="about-us__open-text">
-                        <img src="static/img/arrow-down-1.svg" alt="arrow-down" class="about-us__arrow-down about-us__arrow">
-                        <img src="static/img/arrow-up.svg" alt="arrow-up" class="about-us__arrow-up hide about-us__arrow">
+                        <img src="{% static 'img/arrow-down-1.svg' %}" alt="arrow-down" class="about-us__arrow-down about-us__arrow">
+                        <img src="{% static 'img/arrow-up.svg' %}" alt="arrow-up" class="about-us__arrow-up hide about-us__arrow">
                     </button>
                 </div>
                 <div class="address">
@@ -64,13 +81,13 @@
                       </div>              
                       <div class="address__arrow arrow arrow--left">
                           <button class="address__btn address__btn--left arrow-btn">
-                              <img src="static/img/arrow-left-1.svg" alt="arrow-left" class="arrow-img">
+                              <img src="{% static 'img/arrow-left-1.svg' %}" alt="arrow-left" class="arrow-img">
                           </button>
                       </div>
 
                       <div class="address__arrow arrow arrow--right">
                           <button class="address__btn address__btn--right arrow-btn">
-                              <img src="static/img/arrow-right-1.svg" alt="arrow-right" class="arrow-img">
+                              <img src="{% static 'img/arrow-right-1.svg' %}" alt="arrow-right" class="arrow-img">
                           </button>
                       </div>
                     </div>
@@ -89,22 +106,16 @@
               {% for image in images_my_works %}
                 <img src="{{ image.img.url }}" alt="{{  image.img }}" class="my-works__item">
               {% endfor %}
-
-<!--              <img src="static/img/tatu2.jpg" alt="tatu2" class="my-works__item">-->
-<!--              <img src="static/img/tatu3.jpg" alt="tatu3" class="my-works__item">-->
-<!--              <img src="static/img/tatu1.jpeg" alt="tatu1" class="my-works__item">-->
-<!--              <img src="static/img/tatto.jpg" alt="tatu3" class="my-works__item">-->
-
             </div>
             <div class="arrow arrow--left">
               <button class="my-works__btn my-works__btn--left arrow-btn">
-                <img src="static/img/arrow-left-1.svg" alt="arrow-left" class="arrow-img">
+                <img src="{% static 'img/arrow-left-1.svg' %}" alt="arrow-left" class="arrow-img">
               </button>
             </div>
 
             <div class="arrow arrow--right">
               <button class="my-works__btn my-works__btn--right arrow-btn">
-                <img src="static/img/arrow-right-1.svg" alt="arrow-right" class="arrow-img">
+                <img src="{% static 'img/arrow-right-1.svg' %}" alt="arrow-right" class="arrow-img">
               </button>
             </div>
           </div>
@@ -116,10 +127,9 @@
           <div class="price__bg">
             <h2 class="price__heading heading">Цены</h2>
             <ul class="price__list">
-              <li class="price__item"><p>Татуировка</p> <p>1500р</p></li>
-              <li class="price__item"><p>Исправление татуировки</p> <p>1500р</p></li>
-              <li class="price__item"><p>Перекрытие татуировки</p> <p>2000р</p></li>
-              <li class="price__item"><p>Реставрация татуировки</p> <p>1500р</p></li>
+                {% for service in services %}
+                    <li class="price__item"><p>{{ service.title }}</p> <p>{{ service.price }}</p></li>
+                {% endfor %}
             </ul>
           </div>
         </div>
@@ -132,8 +142,8 @@
           <div class="record__messengers">
             <p class="phone">Тел: +7(999) 999-99-99</p>
             <div class="messengers">
-              <a href="#!" class="messenger__link"><img src="static/img/viber.svg" alt="viber" class="messenger__img"></a>
-              <a href="#!" class="messenger__link"><img src="static/img/whatsapp-1.svg" alt="whatsapp" class="messenger__img"></a>
+              <a href="#!" class="messenger__link"><img src="{% static 'img/viber.svg' %}" alt="viber" class="messenger__img"></a>
+              <a href="#!" class="messenger__link"><img src="{% static 'img/whatsapp-1.svg' %}" alt="whatsapp" class="messenger__img"></a>
             </div>
           </div>
         </div>
@@ -145,12 +155,12 @@
           <div class="review__slider slider">
             <div class="arrow">
               <button class="review__btn arrow-btn">
-                <img src="static/img/arrow-left.svg" alt="arrow-left" class="arrow-img">
+                <img src="{% static 'img/arrow-left.svg' %}" alt="arrow-left" class="arrow-img">
               </button>
             </div>
             <div class="arrow">
               <button class="review__btn arrow-btn">
-                <img src="static/img/arrow-rigth.svg" alt="arrow-rigth" class="arrow-img">
+                <img src="{% static 'img/arrow-rigth.svg' %}" alt="arrow-rigth" class="arrow-img">
               </button>
             </div>
           </div>
@@ -161,12 +171,12 @@
     <footer class="page-footer">
       <div class="container">
         <div class="page-footer__logo logo">
-          <img src="static/img/logo.svg" alt="logo" class="page-footer__img logo__img">
+          <img src="{% static 'img/logo.svg' %}" alt="logo" class="page-footer__img logo__img">
           <h1 class="page-footer-logo-text logo__text">BULAD</h1>
         </div>
       </div>  
     </footer>
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </div>
 </body>
 </html>

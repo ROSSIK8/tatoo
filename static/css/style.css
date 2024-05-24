@@ -227,14 +227,6 @@ body {
   padding: 60px 0;
 }
 
-/* .about-us {
-  padding-top: 30px;
-  font-size: 24px;
-  color: #d2d2d2;
-  background: url("../img/bg1.jpg") no-repeat;
-  background-size: cover;
-} */
-
 .about-us__desc {
   display: flex;
 }
@@ -299,11 +291,6 @@ body {
   margin: 10px 0 0 0;
 }
 
-.my-works {
-  background: url("../img/bg9.jpg") no-repeat;
-  background-size: cover;
-}
-
 .my-works__heading {
   display: inline-block;
   color: #000000;
@@ -332,13 +319,6 @@ body {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.price {
-  color: #d2d2d2;
-  background: url("../img/bg3.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .price__heading {
@@ -373,13 +353,6 @@ body {
   height: 3px;
   width: 100%;
   background-color: #d2d2d2;
-}
-
-.record {
-  color: #000;
-  background: url("../img/bg4.jpg");
-  background-size: cover;
-  background-position-y: -50px;
 }
 
 .record__heading {
